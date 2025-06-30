@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String
+  firstName   String
+  lastName    String
+  phone       String?
+  avatar      String?
+  
+  // Informations étudiantes
+  university  String?
+  studentId   String?
+  level       StudentLevel?
+  field       String?
+  
+  // Préférences et localisation
+  bio         String?  @db.Text
+  address     String?
+  city        String   @default("Paris")
+  postalCode  String?
+  latitude    Float?
+  longitude   Float?
+  
+  // Statut et préférences
+  isVerified  Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  preferences Json?
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  lastLoginAt DateTime?
+  
+  @@map("users")
+}
+
+enum StudentLevel {
+  LICENCE_1
+  LICENCE_2
+  LICENCE_3
+  MASTER_1
+  MASTER_2
+  DOCTORAT
+  AUTRE
+}

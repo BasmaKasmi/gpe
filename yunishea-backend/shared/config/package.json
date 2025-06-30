@@ -1,0 +1,13 @@
+{
+  "name": "@yunishea-backend/config",
+  "version": "1.0.0",
+  "description": "Configuration partagée pour YuniShea Backend",
+  "main": "index.ts",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "typescript": "^5.1.6"
+  }
+}

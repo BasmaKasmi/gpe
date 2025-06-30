@@ -1,0 +1,54 @@
+{
+  "name": "yunishea-backend",
+  "version": "1.0.0",
+  "description": "YuniShea Backend - API microservices pour la plateforme d'économie circulaire et d'entraide étudiante",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:*\"",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "start": "node dist/index.js",
+    "dev:api-gateway": "cd services/api-gateway && npm run dev",
+    "dev:auth": "cd services/auth-service && npm run dev",
+    "dev:user": "cd services/user-service && npm run dev",
+    "dev:listing": "cd services/listing-service && npm run dev",
+    "dev:messaging": "cd services/messaging-service && npm run dev",
+    "dev:notification": "cd services/notification-service && npm run dev"
+  },
+  "workspaces": [
+    "services/*",
+    "shared/*"
+  ],
+  "keywords": [
+    "yunishea",
+    "backend",
+    "api",
+    "microservices",
+    "economie-circulaire",
+    "etudiants",
+    "entraide",
+    "nodejs",
+    "typescript",
+    "prisma",
+    "mysql"
+  ],
+  "author": "Ton nom",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ton-username/yunishea-backend.git"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^24.0.4",
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.10.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "dotenv": "^16.6.0"
+  }
+}
