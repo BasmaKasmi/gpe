@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev:*\"",
-    "build": "npm run build --workspaces",
+    "build": "npm run build --workspaces --if-present",
     "test": "npm run test --workspaces",
     "start": "node dist/index.js",
     "dev:api-gateway": "cd services/api-gateway && npm run dev",

@@ -6,7 +6,7 @@ dotenv.config({ path: path.join(__dirname, "../../../.env") });
 
 const databaseUrl =
   process.env.DATABASE_URL ||
-  "mysql://root:Basma!2001@localhost:3306/yunishea_backend_db";
+  "mysql://root:root@localhost:3306/yunishea_backend_db";
 
 const prisma = new PrismaClient({
   datasources: {
